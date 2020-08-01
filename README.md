@@ -1,1 +1,1 @@
-# starscore2
+# star-score2
