@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="zh-Hant-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>star jquery</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.js"
+        integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <style>
+        * {
+            font-family: 微軟正黑體;
+            font-size: 20px;
+            margin: 0px;
+            padding: 0px;
+            background-color: #FFFFAA;
+        }
+
+        .divpattern {
+            margin-top: 300px;
+            margin-left: 450px;
+            width: 680px;
+        }
+
+        h1 {
+            font-size: 30px;
+            text-align: center;
+            color: #3C3C3C;
+            padding: 24px;
+        }
+
+        img {
+            cursor: pointer;
+        }
+
+        p {
+            text-align: center;
+            color: #FF2D2D;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class=divpattern id=star_div>
+        <h1>評分表</h1>
+        <img id="img1" src="images/star.gif" />
+        <img id="img2" src="images/star.gif" />
+        <img id="img3" src="images/star.gif" />
+        <img id="img4" src="images/star.gif" />
+        <img id="img5" src="images/star.gif" />
+        <p id="p">請評分...</p>
+    </div>
+    <script>
+        $("#img1").hover(function () {
+            $(this).attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("打分中...一顆星!");
+        }, function () {
+            $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("請評分...");
+        });
+        $("#img1").one("click mouseout", function () {
+            $(this).attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("一顆星! 再接再厲");
+        })
+        $("#img2").hover(function () {
+            $("#img1,#img2").attr("src", "images/chngstar.gif");
+            $("#img3,#img4,#img5").attr("src", "images/star.gif");
+            $("#p").text("打分中...兩顆星!!");
+        }, function () {
+            $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("請評分...");
+        })
+        $("#img2").one("click mouseout", function () {
+            $("#img1,#img2").attr("src", "images/chngstar.gif");
+            $("#img3,#img4,#img5").attr("src", "images/star.gif");
+            $("#p").text("兩顆星!! 加油");
+        })
+        $("#img3").hover(function () {
+            $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
+            $("#img4,#img5").attr("src", "images/star.gif");
+            $("#p").text("打分中...三顆星!!!");
+        }, function () {
+            $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("請評分...");
+        })
+        $("#img3").one("click mouseout", function () {
+            $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
+            $("#img4,#img5").attr("src", "images/star.gif");
+            $("#p").text("三顆星!!! 普普通通");
+        })
+        $("#img4").hover(function () {
+            $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
+            $("#img5").attr("src", "images/star.gif");
+            $("#p").text("打分中...四顆星!!!!");
+        }, function () {
+            $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("請評分...");
+        })
+        $("#img4").one("click mouseout", function (){
+            $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
+            $("#img5").attr("src", "images/star.gif");
+            $("#p").text("四顆星!!!! 不錯哦");
+        })
+            
+        $("#img5").hover(function () {
+            $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
+            $("#p").text("打分中...五顆星!!!!!")
+        }, function () {
+            $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
+            $("#p").text("請評分...");
+        })
+        $("#img5").one("click mouseout", function (){
+            $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
+            $("#p").text("五顆星!!!!! 你好棒")
+        })
+    </script>
+
+
+
+</body>
+
+</html>
