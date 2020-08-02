@@ -52,6 +52,11 @@
         <p id="p">請評分...</p>
     </div>
     <script>
+        let check1 = false;
+        let check2 = false;
+        let check3 = false;
+        let check4 = false;
+        let check5 = false;
         $("#img1").hover(function () {
             $(this).attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("打分中...一顆星!");
@@ -59,9 +64,15 @@
             $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("請評分...");
         });
-        $("#img1").one("click mouseout", function () {
-            $(this).attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
-            $("#p").text("一顆星! 再接再厲");
+        $("#img1").click(function () {
+            if (!check1) {
+                check1 = true;
+                $("#img1").attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
+                $("#img1").mouseout(function () {
+                    $("#img1").attr("src", "images/chngstar.gif").siblings().attr("src", "images/star.gif");
+                    $("#p").text("一顆星! 再接再厲");
+                })
+            }
         })
         $("#img2").hover(function () {
             $("#img1,#img2").attr("src", "images/chngstar.gif");
@@ -71,10 +82,17 @@
             $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("請評分...");
         })
-        $("#img2").one("click mouseout", function () {
-            $("#img1,#img2").attr("src", "images/chngstar.gif");
-            $("#img3,#img4,#img5").attr("src", "images/star.gif");
-            $("#p").text("兩顆星!! 加油");
+        $("#img2").click(function () {
+            if (!check2) {
+                check2 = true;
+                $("#img1,#img2").attr("src", "images/chngstar.gif");
+                $("#img3,#img4,#img5").attr("src", "images/star.gif");
+                $("#img2").mouseout(function () {
+                    $("#img1,#img2").attr("src", "images/chngstar.gif");
+                    $("#img3,#img4,#img5").attr("src", "images/star.gif");
+                    $("#p").text("兩顆星!! 加油");
+                })
+            }
         })
         $("#img3").hover(function () {
             $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
@@ -84,10 +102,17 @@
             $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("請評分...");
         })
-        $("#img3").one("click mouseout", function () {
-            $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
-            $("#img4,#img5").attr("src", "images/star.gif");
-            $("#p").text("三顆星!!! 普普通通");
+        $("#img3").click(function () {
+            if (!check3) {
+                check3 = true;
+                $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
+                $("#img4,#img5").attr("src", "images/star.gif");
+                $("#img3").mouseout(function () {
+                    $("#img1,#img2,#img3").attr("src", "images/chngstar.gif");
+                    $("#img4,#img5").attr("src", "images/star.gif");
+                    $("#p").text("三顆星!!! 普普通通");
+                })
+            }
         })
         $("#img4").hover(function () {
             $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
@@ -97,12 +122,18 @@
             $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("請評分...");
         })
-        $("#img4").one("click mouseout", function (){
-            $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
-            $("#img5").attr("src", "images/star.gif");
-            $("#p").text("四顆星!!!! 不錯哦");
+        $("#img4").click(function () {
+            if (!check4) {
+                check4 = true;
+                $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
+                $("#img5").attr("src", "images/star.gif");
+                $("#img4").mouseout(function () {
+                    $("#img1,#img2,#img3,#img4").attr("src", "images/chngstar.gif");
+                    $("#img5").attr("src", "images/star.gif");
+                    $("#p").text("四顆星!!!! 不錯哦");
+                })
+            }
         })
-            
         $("#img5").hover(function () {
             $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
             $("#p").text("打分中...五顆星!!!!!")
@@ -110,9 +141,15 @@
             $(this).attr("src", "images/star.gif").siblings().attr("src", "images/star.gif");
             $("#p").text("請評分...");
         })
-        $("#img5").one("click mouseout", function (){
-            $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
-            $("#p").text("五顆星!!!!! 你好棒")
+        $("#img5").click(function () {
+            if (!check5) {
+                check5 = true;
+                $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
+                $("#img5").mouseout(function () {
+                    $("#img1,#img2,#img3,#img4,#img5").attr("src", "images/chngstar.gif");
+                    $("#p").text("五顆星!!!!! 你好棒")
+                })
+            }
         })
     </script>
 
